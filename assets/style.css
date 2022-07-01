@@ -1,0 +1,73 @@
+ *{
+    margin: 5px;
+    font-size: 20px;
+    font-family: sans-serif;
+
+ }
+
+
+/* USE DISPLAY NONE */
+
+
+
+/* 
+style for the body
+background color
+text color
+text font
+text color
+button sizes, padding and margin
+*/
+
+/* 
+animation and other cools features
+*/
+
+ body{
+    text-align: center;
+   
+    width: 94%;
+    height: 100vh;
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+          -45deg, 
+          rgba(59,173,227,1) 0%, 
+          rgba(87,111,230,1) 25%, 
+          rgba(152,68,183,1) 51%, 
+          rgba(255,53,127,1) 100%
+    );  
+    animation: AnimateBG 20s ease infinite;
+  }
+  
+  @keyframes AnimateBG { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+p {
+    margin: 10%
+}
+
+  button{
+    display:block;
+    align-content: center;
+    
+    height: 50px;
+    width: fit-content;
+  }
+
+  .start-screen {
+    display: block;
+
+  }
+
+  .game-screen {
+    display: block;
+  }
+
+  #ans{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: springgreen;
+  }
