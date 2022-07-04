@@ -1,8 +1,10 @@
  *{
-    margin: 5px;
+
     font-size: 20px;
     font-family: sans-serif;
-
+    color: gold;
+    margin: auto;
+    
  }
 
 
@@ -24,50 +26,121 @@ animation and other cools features
 */
 
  body{
-    text-align: center;
+   background-image: url("./starwars-backdrop.jpg");
+ }
    
-    width: 94%;
-    height: 100vh;
-    background-size: 300% 300%;
-    background-image: linear-gradient(
-          -45deg, 
-          rgba(59,173,227,1) 0%, 
-          rgba(87,111,230,1) 25%, 
-          rgba(152,68,183,1) 51%, 
-          rgba(255,53,127,1) 100%
-    );  
-    animation: AnimateBG 20s ease infinite;
-  }
-  
-  @keyframes AnimateBG { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-  }
-p {
-    margin: 10%
+
+ p {
+    margin: 10%;
 }
 
-  button{
-    display:block;
-    align-content: center;
+
+
+button{
+    display:flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    background: transparent;
+    border: transparent;
+    border-radius: 30px 30px 30px 30px;
+    height: 40px;
+    width: 200px;
+    font-size: 30px;
+    font-weight: bold;
+   
+    margin-top: 70px;
+    margin-bottom: 70px;
+
+    color: red;
+   
+  } 
+
+  button:hover{
+    background-color: rgba(255, 255, 255, 0.637);
+    box-shadow: rgba(0, 158, 226, 0.747) 0px 0px 10px 10px; 
+    width: 700px;
+    transition: width .4s ease-out;
+    display:flex;
+    flex: auto;
+    flex-direction: column;
+    align-items: center;
     
-    height: 50px;
-    width: fit-content;
   }
+
+  .saber{
+    display:flex;
+    flex: auto;
+    flex-direction: column;
+    justify-self: right;
+    margin-right: 0;
+    
+  }
+
 
   .start-screen {
     display: block;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    
 
   }
 
+ 
   .game-screen {
     display: block;
+    
   }
 
-  #ans{
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-    color: springgreen;
+
+.header{
+  margin: 35px;
+  font-size: 60px;
+  font-weight: bold;
+  justify-content: center;
+
+}
+
+.flex{
+  display: flex;
+  flex-direction: row;
+}
+
+header .header {
+  font-size: 40px;
+}
+
+.no-margin-right{
+  margin-right: 0;
+}
+
+.no-margin-left{
+  margin-left: 0;
+}
+
+.time {
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  line-height: 40px;
+  color: red;
   }
+  #game-question{
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+  }
+
+  #gameStarter{
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    margin-left: 300px;
+    color: white;
+  } 
+
+ 
