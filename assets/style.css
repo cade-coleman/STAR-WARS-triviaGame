@@ -8,22 +8,6 @@
  }
 
 
-/* USE DISPLAY NONE */
-
-
-
-/* 
-style for the body
-background color
-text color
-text font
-text color
-button sizes, padding and margin
-*/
-
-/* 
-animation and other cools features
-*/
 
  body{
    background-image: url("./starwars-backdrop.jpg");
@@ -49,13 +33,10 @@ button{
     width: 200px;
     font-size: 30px;
     font-weight: bold;
-   
     margin-top: 70px;
     margin-bottom: 70px;
-
     color: red;
-   
-  } 
+     } 
 
   button:hover{
     background-color: rgba(255, 255, 255, 0.637);
@@ -67,6 +48,11 @@ button{
     flex-direction: column;
     align-items: center;
     
+  }
+
+
+  .hidden {
+    display: none;
   }
 
   .saber{
@@ -120,6 +106,10 @@ header .header {
   margin-left: 0;
 }
 
+.input1{
+  align-items: center;
+}
+
 .time {
   flex: auto;
   display: flex;
@@ -143,4 +133,36 @@ header .header {
     color: white;
   } 
 
+  #score{
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  #input{
+    flex: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+
+  #submit{
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+    background-color: transparent;
+    transition: none;
+  }
  
+  #submit:hover{ 
+    
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+    background-color: transparent;
+    transition: none;
+  }
