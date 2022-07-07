@@ -141,28 +141,11 @@ header .header {
     margin-bottom: 40px;
   }
 
-  #input{
+  .input1{
     flex: auto;
     display: flex;
     justify-content: center;
   }
 
 
-  #submit{
-    flex: auto;
-    display: flex;
-    justify-content: center;
-    box-shadow: none;
-    background-color: transparent;
-    transition: none;
-  }
  
-  #submit:hover{ 
-    
-    flex: auto;
-    display: flex;
-    justify-content: center;
-    box-shadow: none;
-    background-color: transparent;
-    transition: none;
-  }
