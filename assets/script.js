@@ -9,12 +9,12 @@ let screenStart = document.getElementsByClassName('.start-screen');
 let gameScreen = document.getElementsByClassName('gameScreen');
 let saberButtons = document.getElementById('#saberButtons');
 let gameScore = document.getElementById('score');
-let timeLeft = 45;
 let button1 = document.querySelector("#button-1");
 let button2 = document.querySelector("#button-2");
 let button3 = document.querySelector("#button-3");
 let button4 = document.querySelector("#button-4");
 let timeInterval
+let timeLeft = 45;
 let qCounter = 0;
 let score = 0;
 let qaContainerEl = document.getElementById('qaContainer');
@@ -26,72 +26,73 @@ let topFive = document.querySelector('.top-five-scores');
 
 
 
-
-
-
 let questionKey1 = {
   answer: 'The Force',
   choices: ['The Force', 'The Way', 'The Holy Spirit', 'Duralock'],
   question: 'In Star Wars, what do they call the invisible power that binds the galaxy together?',
 };
-
 let questionKey2 = {
   answer: 'Bothans',
   choices: ['Wookies', 'Jedi','Bothans','Clones'],
   question: 'What species stole the plans to the Death Star?',
 };
-
 let questionKey3 = {
 
   answer: 'Syfo Dyas',
-  choices: ['Yoda', 'Mace Windu', 'Luke SKywalker', 'Syfo Dyas'],
+  choices: ['Yoda', 'Mace Windu', 'Luke Skywalker', 'Syfo Dyas'],
   question: 'Who was the Jedi master that ordered to create clones?',
 };
-
 let questionKey4 = {
   answer: 'Mon Calamari',
   choices: ['Hutt', 'Jedi', 'Son Malamari', 'Mon Calamari'],
   question: ' What alien race does Admiral Ackbar belong to?',
 };
-
 let questionKey5 = {
   answer: 'Mandalorian',
   choices: ['Mandalorian','Call of the Wild', 'Delorean', 'Clone Trooper'],
   question: 'What is the battle armor used by Boba Fett?',
 };
-
 let questionKey6 = {
   answer: 'Millenium Falcon',
   choices: ['Megaannom cruiser', 'Millenium Falcon', 'Aluminium Eagle', 'Hans Solo',],
   question: 'What is the name of Han Solo’s ship?',
 };
-
 let questionKey7 = {
   answer: 'George Lucas',
   choices: ['George Lucas', 'George R.R. Martin', 'J. R. R. Tolkien', 'Gene Roddenberry',],
   question: 'Who is the creator of Star Wars?',
 };
-
 let questionKey8 = {
   answer: 'Tatooine',
   choices: ['Coruscant', 'Tatooine', 'Hoth', 'Kashyyyk'],
   question: 'Where did Obi-Wan take Luke after his birth?',
 };
-
 let questionKey9 = {
   answer: '1977',
   choices: ['1982', '1980', '1996', '1977'],
   questions: 'What year did the first Star Wars movie come out?',
 };
-
 let questionKey10 = {
   answer: 'Darth Sidious',
   choices: ['Darth Sidious', 'Darth vader', 'Anakin Skywalker', 'Count Duko'],
   question: 'Who killed Mace Windu?',
 };
 
+
+
+// This button starts the game using an addEventListener
+gameStarter.addEventListener('click', function () {
+  displayQ();
+  countdown();
+
+})
+
+
+
 let questionArray = [questionKey1, questionKey2, questionKey3, questionKey4, questionKey5, questionKey6, questionKey7, questionKey8, questionKey9, questionKey10];
 console.log(questionArray);
+
+
 
 // Changes texts on buttons
 function displayQ() {
@@ -102,9 +103,6 @@ function displayQ() {
   button3.textContent = questionArray[qCounter].choices[2]
   button4.textContent = questionArray[qCounter].choices[3]
 }
-
-
-
 
 
 
@@ -207,12 +205,7 @@ function checkAnswer(event) {
   }
 }
 
-// This button starts the game using an addEventListener
-gameStarter.addEventListener('click', function () {
-  displayQ();
-  countdown();
 
-})
 
 submitScoreEl.addEventListener('click', handleScore)
 
@@ -220,3 +213,11 @@ button1.addEventListener('click', checkAnswer);
 button2.addEventListener('click', checkAnswer);
 button3.addEventListener('click', checkAnswer);
 button4.addEventListener('click', checkAnswer);
+
+
+
+
+
+
+
+
