@@ -2,7 +2,7 @@
 
 
 // HTML buttons and tags
-let questionText = document.getElementById("game-question")
+let questionText = document.getElementById("game-question");
 let gameStarter = document.querySelector("#gameStarter");
 let timer = document.getElementById('timer');
 let screenStart = document.getElementsByClassName('.start-screen');
@@ -33,7 +33,7 @@ let questionKey1 = {
 };
 let questionKey2 = {
   answer: 'Bothans',
-  choices: ['Wookies', 'Jedi','Bothans','Clones'],
+  choices: ['Wookies', 'Jedi', 'Bothans', 'Clones'],
   question: 'What species stole the plans to the Death Star?',
 };
 let questionKey3 = {
@@ -49,7 +49,7 @@ let questionKey4 = {
 };
 let questionKey5 = {
   answer: 'Mandalorian',
-  choices: ['Mandalorian','Call of the Wild', 'Delorean', 'Clone Trooper'],
+  choices: ['Mandalorian', 'Call of the Wild', 'Delorean', 'Clone Trooper'],
   question: 'What is the battle armor used by Boba Fett?',
 };
 let questionKey6 = {
@@ -70,13 +70,19 @@ let questionKey8 = {
 let questionKey9 = {
   answer: '1977',
   choices: ['1982', '1980', '1996', '1977'],
-  questions: 'What year did the first Star Wars movie come out?',
+  question: 'What year did the first Star Wars movie come out?',
 };
 let questionKey10 = {
   answer: 'Darth Sidious',
   choices: ['Darth Sidious', 'Darth vader', 'Anakin Skywalker', 'Count Duko'],
   question: 'Who killed Mace Windu?',
 };
+let questionKey11 = {
+  answer: '',
+  choices: [],
+  question: '',
+};
+
 
 
 
@@ -89,7 +95,7 @@ gameStarter.addEventListener('click', function () {
 
 
 
-let questionArray = [questionKey1, questionKey2, questionKey3, questionKey4, questionKey5, questionKey6, questionKey7, questionKey8, questionKey9, questionKey10];
+let questionArray = [questionKey1, questionKey2, questionKey3, questionKey4, questionKey5, questionKey6, questionKey7, questionKey8, questionKey9, questionKey10, questionKey11];
 console.log(questionArray);
 
 
@@ -138,18 +144,19 @@ function countdown() {
 function showScore() {
   gameScore.textContent = ('Your score is ' + score);
   timer.textContent = 'Game Over';
-
+  
+  
   // Use `clearInterval()` to stop the timer
   clearInterval(timeInterval);
-  questionText.classList.add('hidden');
   qaContainerEl.classList.add('hidden');
   submitScoreEl.classList.remove('hidden');
-
+  questionText.classList.add('hidden');
+  
 }
 
 function handleScore(event) {
   if (event.target.matches('button')) {
-
+    
     let initials = event.target.previousElementSibling.value;
     let tempObject = {
       initials,
@@ -164,37 +171,38 @@ function handleScore(event) {
 function renderTopScores() {
   topFive.classList.remove('hidden')
   submitScoreEl.classList.add('hidden');
-
+  
+  
   topFive.innerHTML = '';
   for (let i = 0; i < highScore.length; i++) {
     let p = document.createElement('p')
     p.textContent = 'initials: ' + highScore[i].initials + ' score: ' + highScore[i].score;
     topFive.append(p);
   }
-
+  
 }
 
 // Function to check the correct answer 
 function checkAnswer(event) {
-
+  
   console.log(event);
   //  Reads the name of the item clicked
   let ansClick = event.target.textContent;
   let correctAnswer = questionArray[qCounter].answer;
   if (ansClick === correctAnswer) {
-
+    
     //subtract time
     qCounter = qCounter + 1;
     score = score + 10;
     console.log('true');
     console.log(score)
-
+    
   } else {
     timeLeft = timeLeft - 5;
     qCounter = qCounter + 1;
     console.log('false');
     console.log(score);
-
+    
   }
   console.log(qCounter);
   console.log(questionArray.length);
