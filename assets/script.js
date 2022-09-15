@@ -5,7 +5,7 @@
 let questionText = document.getElementById("game-question");
 let gameStarter = document.querySelector("#gameStarter");
 let timer = document.getElementById('timer');
-let screenStart = document.getElementsByClassName('.start-screen');
+let screenStart = document.getElementById('start-screen');
 let gameScreen = document.getElementsByClassName('gameScreen');
 let saberButtons = document.getElementById('#saberButtons');
 let gameScore = document.getElementById('score');
@@ -21,6 +21,7 @@ let qaContainerEl = document.getElementById('qaContainer');
 let submitScoreEl = document.getElementById('submitScore');
 let highScore = JSON.parse(localStorage.getItem('highScore')) || [];
 let topFive = document.querySelector('.top-five-scores');
+let playAgain = document.querySelector('.top-five-scores');
 
 
 
@@ -77,11 +78,6 @@ let questionKey10 = {
   choices: ['Darth Sidious', 'Darth vader', 'Anakin Skywalker', 'Count Duko'],
   question: 'Who killed Mace Windu?',
 };
-let questionKey11 = {
-  answer: '',
-  choices: [],
-  question: '',
-};
 
 
 
@@ -95,7 +91,7 @@ gameStarter.addEventListener('click', function () {
 
 
 
-let questionArray = [questionKey1, questionKey2, questionKey3, questionKey4, questionKey5, questionKey6, questionKey7, questionKey8, questionKey9, questionKey10, questionKey11];
+let questionArray = [questionKey1, questionKey2, questionKey3, questionKey4, questionKey5, questionKey6, questionKey7, questionKey8, questionKey9, questionKey10];
 console.log(questionArray);
 
 
@@ -117,7 +113,7 @@ function countdown() {
 
   qaContainerEl.classList.remove('hidden');
   questionText.classList.remove('hidden');
-
+  screenStart.classList.add('hidden')
 
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   timeInterval = setInterval(function () {
@@ -141,6 +137,8 @@ function countdown() {
 }
 
 
+
+// brings you to the submit screen
 function showScore() {
   gameScore.textContent = ('Your score is ' + score);
   timer.textContent = 'Game Over';
@@ -157,9 +155,9 @@ function showScore() {
 function handleScore(event) {
   if (event.target.matches('button')) {
     
-    let initials = event.target.previousElementSibling.value;
+    let name = event.target.previousElementSibling.value;
     let tempObject = {
-      initials,
+      name,
       score,
     }
     highScore.push(tempObject)
@@ -172,11 +170,10 @@ function renderTopScores() {
   topFive.classList.remove('hidden')
   submitScoreEl.classList.add('hidden');
   
-  
   topFive.innerHTML = '';
   for (let i = 0; i < highScore.length; i++) {
     let p = document.createElement('p')
-    p.textContent = 'initials: ' + highScore[i].initials + ' score: ' + highScore[i].score;
+    p.textContent =  highScore[i].name+'\'s' + ' score: ' + highScore[i].score;
     topFive.append(p);
   }
   
